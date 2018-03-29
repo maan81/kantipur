@@ -14,6 +14,26 @@
 
 
 
+     function onGoogleLoad() {
+        gapi.client.setApiKey('AIzaSyBlki-XWA4lYvSKybp4Ld5UJ81FZHc_C_U');
+        gapi.client.load('youtube', 'v3', function() {
+
+            var request = gapi.client.youtube.playlistItems.list({
+                // part: 'snippet',
+                playlistId: 'PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-',
+                maxResults: 10
+            });
+
+            request.execute(function(response) {
+                for (var i = 0; i < response.items.length; i++) {
+                    console.log(response.items[i].snippet.title + " published at " + response.items[i].snippet.publishedAt)
+                }
+            });
+        });
+    }
+
+
+
     // buildApiRequest(
     //     'GET',
     //     '/youtube/v3/playlists',

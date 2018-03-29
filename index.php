@@ -12,6 +12,8 @@
     <div id="playlist"></div>
 
     <script type="text/javascript" src="script.js"></script>
+    
+    <script src="https://apis.google.com/js/client.js?onload=onGoogleLoad"></script>
 
 </body>
 </html>
