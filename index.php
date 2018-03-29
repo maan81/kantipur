@@ -9,6 +9,8 @@
 
     <div id="player"></div>
 
+    <div id="playlist"></div>
+
    <script>
         // 2. This code loads the IFrame Player API code asynchronously.
         var tag = document.createElement('script');
@@ -22,6 +24,20 @@
         //    after the API code downloads.
         var player;
 
+
+
+
+        buildApiRequest(
+            'GET',
+            '/youtube/v3/playlists',
+            {
+                'channelId': 'PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-',
+                'maxResults': '10'
+                // 'part': 'snippet,contentDetails'
+            }
+        );
+
+
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
                 height: '390',
@@ -34,7 +50,18 @@
                 // https://www.youtube.com/watch?v=IMlQFgRacQU&list=PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-&t=0s&index=1
                 videoId: 'IMlQFgRacQU',
 
-                events: {
+                playerVars: {
+                    listType:'playlist',
+                    list: 'PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-'
+
+                    // 'autoplay': 0,
+                    // 'controls': 1,
+                    // 'playlist':[
+                    //     'IMlQFgRacQU'
+                    // ]
+                },
+
+                  events: {
                     'onReady': onPlayerReady,
                     'onStateChange': onPlayerStateChange
                 }
