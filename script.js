@@ -70,7 +70,8 @@
 
 
 setTimeout(function(){
-    addPlaylist()
+    addPlaylist();
+    addComments();
 },10000);
 
 
@@ -91,4 +92,70 @@ function addPlaylist(){
         var src = 'http://img.youtube.com/vi/'+videos[i]+'/0.jpg';
         cur_videos[i].getElementsByTagName('img')[0].src = src;
     }
+}
+
+function addComments(){
+
+    var xmlhttp = new XMLHttpRequest();
+    var url = 'https://www.googleapis.com/youtube/v3/commentThreads'+
+                '?part=snippet'+
+                '&videoId='+cur_video_id+
+                '&key='+cur_key+
+                '&maxResults=4'
+    ;
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myArr = JSON.parse(this.responseText);
+            var comments = filter_comments(myArr.items)
+
+            console.log(comments)
+
+            displayComments(comments);
+        }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    // https://www.googleapis.com/youtube/v3/commentThreads
+    //         ?part=snippet
+    //         &videoId=IMlQFgRacQU
+    //         &key=AIzaSyBlki-XWA4lYvSKybp4Ld5UJ81FZHc_C_U
+    //         &maxResults=4
+}
+
+function displayComments(comments){
+
+    var html = '';
+
+    for(var i=0;i<comments.length;i++){
+        html +=
+                '<div class="comment">'+
+                '    <small class="text-secondary">'+
+                '        <span class="username">'+comments[i].username+'</span> wrote :'+
+                '    </small>'+
+                '    <p>'+comments[i].comment+'</p>'+
+                '</div>'
+        ;
+    }
+
+    document
+        .getElementsByClassName('comment_existing')[0]
+        .insertAdjacentHTML('afterbegin',html)
+    ;
+}
+
+function filter_comments(items){
+
+    var comments = [];
+
+    for (var i=0;i<items.length;i++){
+        var comment = {
+            'username': items[i].snippet.topLevelComment.snippet.authorDisplayName,
+            'comment' : items[i].snippet.topLevelComment.snippet.textDisplay
+        };
+        comments.push(comment);
+    }
+
+    return comments;
 }

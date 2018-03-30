@@ -80,24 +80,6 @@
             </div>
             <div class="clearfix"></div>
             <div class="comment_existing">
-                <div class="comment">
-                    <small class="text-secondary">Someone Wrote :</small>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id dolor efficitur, tincidunt purus vitae, sagittis massa. Ut ullamcorper lectus ex, sit amet mollis eros consectetur ut. In hac habitasse platea dictumst. Fusce magna enim, fringilla nec mattis nec, efficitur non ligula. Proin posuere non quam sit amet elementum. Praesent eget lorem et metus varius aliquam. Donec urna est, sagittis at dolor sit amet, bibendum aliquam ex.
-                    </p>
-                </div>
-                <div class="comment">
-                    <small class="text-secondary">Someone Wrote :</small>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id dolor efficitur, tincidunt purus vitae, sagittis massa. Ut ullamcorper lectus ex, sit amet mollis eros consectetur ut. In hac habitasse platea dictumst. Fusce magna enim, fringilla nec mattis nec, efficitur non ligula. Proin posuere non quam sit amet elementum. Praesent eget lorem et metus varius aliquam. Donec urna est, sagittis at dolor sit amet, bibendum aliquam ex.
-                    </p>
-                </div>
-                <div class="comment">
-                    <small class="text-secondary">Someone Wrote :</small>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id dolor efficitur, tincidunt purus vitae, sagittis massa. Ut ullamcorper lectus ex, sit amet mollis eros consectetur ut. In hac habitasse platea dictumst. Fusce magna enim, fringilla nec mattis nec, efficitur non ligula. Proin posuere non quam sit amet elementum. Praesent eget lorem et metus varius aliquam. Donec urna est, sagittis at dolor sit amet, bibendum aliquam ex.
-                    </p>
-                </div>
             </div>
         </div>
 
@@ -110,6 +92,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+    var cur_key = 'AIzaSyBlki-XWA4lYvSKybp4Ld5UJ81FZHc_C_U';
     var cur_video_id = '<?=isset($_GET['v'])?$_GET['v']:'IMlQFgRacQU'?>';
     var cur_list = '<?=isset($_GET['list'])?$_GET['list']:'PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-'?>';
     var cur_index = '<?=isset($_GET['index'])?$_GET['index']:'null'?>';
