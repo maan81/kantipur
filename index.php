@@ -109,6 +109,12 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+    var cur_video_id = '<?=isset($_GET['v'])?$_GET['v']:'IMlQFgRacQU'?>';
+    var cur_list = '<?=isset($_GET['list'])?$_GET['list']:'PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-'?>';
+    var cur_index = '<?=isset($_GET['index'])?$_GET['index']:'null'?>';
+</script>
+
 <script type="text/javascript" src="script.js"></script>
 
 </body>

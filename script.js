@@ -21,11 +21,11 @@
 
             // 1st video in What The Flop
             // https://www.youtube.com/watch?v=IMlQFgRacQU&list=PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-&t=0s&index=1
-            videoId: 'IMlQFgRacQU',
+            videoId: cur_video_id,
 
             playerVars: {
                 listType:'playlist',
-                list: 'PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-',
+                list: cur_list,
                 autoplay: 0,
                 controls: 1
                 // 'playlist':[
@@ -77,26 +77,18 @@ setTimeout(function(){
 function addPlaylist(){
 
     var videos = player.getPlaylist();
-
     var cur_videos = document.getElementById('player_wrapper').getElementsByClassName('link');
-
-    console.log(cur_videos)
 
     for (var i=0;i<9;i++){
 
-        var href='//youtube.com/watch'+
-                    '?v='+videos[i]/*&t=6s*/+
-                    '&list=PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-'+
+        var href='?v='+videos[i]/*&t=6s*/+
+                    '&list='+cur_list+
                     '&index='+(i+1)
         ;
 
         cur_videos[i].getElementsByTagName('a')[0].href = href;
-        console.log(cur_videos[i].getElementsByTagName('a')[0])
 
         var src = 'http://img.youtube.com/vi/'+videos[i]+'/0.jpg';
         cur_videos[i].getElementsByTagName('img')[0].src = src;
-
-
-
     }
 }
