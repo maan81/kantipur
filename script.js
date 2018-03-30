@@ -1,34 +1,20 @@
 
-    // 2. This code loads the IFrame Player API code asynchronously.
     var tag = document.createElement('script');
 
-    tag.src = "//www.youtube.com/iframe_api";
+    tag.src = "http://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
-    // 3. This function creates an <iframe> (and YouTube player)
-    //    after the API code downloads.
     var player;
 
 
 
-
-    // buildApiRequest(
-    //     'GET',
-    //     '/youtube/v3/playlists',
-    //     {
-    //         'channelId': 'PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-',
-    //         'maxResults': '10'
-    //         // 'part': 'snippet,contentDetails'
-    //     }
-    // );
-
-
     function onYouTubeIframeAPIReady() {
+
         player = new YT.Player('player', {
-            // height: '390',
-            // width: '640',
+            height: '390',
+            width: '640',
             
             // What the flop playlist
             // https://www.youtube.com/playlist?list=PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-
@@ -39,10 +25,9 @@
 
             playerVars: {
                 listType:'playlist',
-                list: 'PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-'
-
-                // 'autoplay': 0,
-                // 'controls': 1,
+                list: 'PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-',
+                autoplay: 0,
+                controls: 1
                 // 'playlist':[
                 //     'IMlQFgRacQU'
                 // ]
