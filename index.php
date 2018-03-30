@@ -22,47 +22,47 @@
                     <div id="playlist" class="row">
                         <div class="link col-md-4">
                             <a href="#">
-                                <img src="https://i.ytimg.com/vi/IMlQFgRacQU/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLC8_YBDy_UsqhRIzDQ5FsoSE8QByw" alt="Video Thumbs">
+                                <img src="#" alt="">
                             </a>
                         </div>
                         <div class="link col-md-4">
                             <a href="#">
-                                <img src="https://i.ytimg.com/vi/IMlQFgRacQU/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLC8_YBDy_UsqhRIzDQ5FsoSE8QByw" alt="Video Thumbs">
+                                <img src="#" alt="">
                             </a>
                         </div>
                         <div class="link col-md-4">
                             <a href="#">
-                                <img src="https://i.ytimg.com/vi/IMlQFgRacQU/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLC8_YBDy_UsqhRIzDQ5FsoSE8QByw" alt="Video Thumbs">
+                                <img src="#" alt="">
                             </a>
                         </div>
                         <div class="link col-md-4">
                             <a href="#">
-                                <img src="https://i.ytimg.com/vi/IMlQFgRacQU/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLC8_YBDy_UsqhRIzDQ5FsoSE8QByw" alt="Video Thumbs">
+                                <img src="#" alt="">
                             </a>
                         </div>
                         <div class="link col-md-4">
                             <a href="#">
-                                <img src="https://i.ytimg.com/vi/IMlQFgRacQU/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLC8_YBDy_UsqhRIzDQ5FsoSE8QByw" alt="Video Thumbs">
+                                <img src="#" alt="">
                             </a>
                         </div>
                         <div class="link col-md-4">
                             <a href="#">
-                                <img src="https://i.ytimg.com/vi/IMlQFgRacQU/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLC8_YBDy_UsqhRIzDQ5FsoSE8QByw" alt="Video Thumbs">
+                                <img src="#" alt="">
                             </a>
                         </div>
                         <div class="link col-md-4">
                             <a href="#">
-                                <img src="https://i.ytimg.com/vi/IMlQFgRacQU/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLC8_YBDy_UsqhRIzDQ5FsoSE8QByw" alt="Video Thumbs">
+                                <img src="#" alt="">
                             </a>
                         </div>
                         <div class="link col-md-4">
                             <a href="#">
-                                <img src="https://i.ytimg.com/vi/IMlQFgRacQU/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLC8_YBDy_UsqhRIzDQ5FsoSE8QByw" alt="Video Thumbs">
+                                <img src="#" alt="">
                             </a>
                         </div>
                         <div class="link col-md-4">
                             <a href="#">
-                                <img src="https://i.ytimg.com/vi/IMlQFgRacQU/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLC8_YBDy_UsqhRIzDQ5FsoSE8QByw" alt="Video Thumbs">
+                                <img src="#" alt="">
                             </a>
                         </div>
                     </div>
@@ -108,6 +108,8 @@
 <script src="//code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="script.js"></script>
 
 </body>
 </html>

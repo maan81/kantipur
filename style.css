@@ -12,3 +12,8 @@
 textarea{
 	resize: vertical;
 }
+
+#player_wrapper .link img{
+	width: 168px;
+	height: 94px	
+}
