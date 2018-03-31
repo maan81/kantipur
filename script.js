@@ -1,80 +1,58 @@
 
-    var tag = document.createElement('script');
+var tag = document.createElement('script');
 
-    // tag.src = "https://www.youtube.com/iframe_api";
-    tag.src = "https://youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+tag.src = "https://youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-
-    var player;
+var player;
 
 
+function onYouTubeIframeAPIReady() {
 
-    function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '390',
+        width: '640',
 
-        player = new YT.Player('player', {
-            height: '390',
-            width: '640',
-            
-            // What the flop playlist
-            // https://www.youtube.com/playlist?list=PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-
+        videoId: cur_video_id,
 
-            // 1st video in What The Flop
-            // https://www.youtube.com/watch?v=IMlQFgRacQU&list=PLwUmS78P9jN2rLrgfiMUPIJjZL0kukfo-&t=0s&index=1
-            videoId: cur_video_id,
+        playerVars: {
+            listType:'playlist',
+            list: cur_list,
+            autoplay: 0,
+            controls: 1
+        },
 
-            playerVars: {
-                listType:'playlist',
-                list: cur_list,
-                autoplay: 0,
-                controls: 1
-                // 'playlist':[
-                //     'IMlQFgRacQU'
-                // ]
-            },
-
-              events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            }
-        });
-    }
-
-
-    // 4. The API will call this function when the video player is ready.
-    function onPlayerReady(event) {
-        event.target.playVideo();
-    }
-
-
-    // 5. The API calls this function when the player's state changes.
-    //    The function indicates that when playing a video (state=1),
-    //    the player should play for six seconds and then stop.
-    var done = false;
-    function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-            setTimeout(stopVideo, 6000);
-            done = true;
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
         }
+    });
+}
+
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
+
+var done = false;
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+        setTimeout(stopVideo, 6000);
+        done = true;
     }
-    function stopVideo() {
-        player.stopVideo();
-    }
+}
+function stopVideo() {
+    player.stopVideo();
+}
 
-
-
-
-
-
-
-
+//===========================
 
 setTimeout(function(){
     addPlaylist();
     addComments();
 },10000);
 
+//===========================
 
 function addPlaylist(){
 
