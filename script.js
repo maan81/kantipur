@@ -112,6 +112,7 @@ function addComments(){
             console.log(comments)
 
             displayComments(comments);
+
         }
     };
     xmlhttp.open("GET", url, true);
@@ -181,10 +182,24 @@ function add_new_comment(comment){
 $(document).ready(function(){
     $('.comment_submit').submit(function(e){
         e.preventDefault();
-        $.post('submit_comment.php',{'comment':$('textarea').val()})
+        $.post('comment.php',{'comment':$('textarea').val(),'video_id':cur_video_id})
             .done(function(data){
-                // console.log(data)
                 add_new_comment(data);
             })
     });
+
+    setTimeout(
+        function(){
+            $.get('comments.php?cur_video_id='+cur_video_id).done(function(data){
+                console.log(data)
+                data = JSON.parse(data);
+
+                for(var i=0;i<data.length;i++){
+                    add_new_comment(data[i].comment);
+                }
+            })
+        },
+        20000
+    );
+
 });
