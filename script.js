@@ -1,7 +1,7 @@
 
     var tag = document.createElement('script');
 
-    tag.src = "//www.youtube.com/iframe_api";
+    tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -89,7 +89,7 @@ function addPlaylist(){
 
         cur_videos[i].getElementsByTagName('a')[0].href = href;
 
-        var src = 'http://img.youtube.com/vi/'+videos[i]+'/0.jpg';
+        var src = 'https://img.youtube.com/vi/'+videos[i]+'/0.jpg';
         cur_videos[i].getElementsByTagName('img')[0].src = src;
     }
 }
@@ -109,10 +109,7 @@ function addComments(){
             var myArr = JSON.parse(this.responseText);
             var comments = filter_comments(myArr.items)
 
-            console.log(comments)
-
             displayComments(comments);
-
         }
     };
     xmlhttp.open("GET", url, true);
@@ -191,7 +188,6 @@ $(document).ready(function(){
     setTimeout(
         function(){
             $.get('comments.php?video_id='+cur_video_id).done(function(data){
-                console.log(data)
                 data = JSON.parse(data);
 
                 for(var i=0;i<data.length;i++){
