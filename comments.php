@@ -7,8 +7,8 @@ $db_database = 'kantipur';
 
 
 function insert($con,$video_id){
-    $sql = 'INSERT INTO comments (comment,video_id) VALUES ("'.$_POST['comment'].'" '.
-            'WHERE video_id = "'.$video_id.'")';
+    $sql = 'INSERT INTO comments (comment,video_id) VALUES '.
+            '("'.$_POST['comment'].'","'.$video_id.'")';
     mysqli_query($con,$sql);
     close_con($con);
 }
