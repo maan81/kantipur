@@ -159,3 +159,32 @@ function filter_comments(items){
 
     return comments;
 }
+
+
+//===========================
+
+function add_new_comment(comment){
+
+    var html =
+            '<div class="comment">'+
+            '    <small class="text-secondary">'+
+            '        <span class="username">'+'localhost'+'</span> wrote :'+
+            '    </small>'+
+            '    <p>'+comment+'</p>'+
+            '</div>'
+    ;
+
+    $('.comment_existing').append(html);
+
+}
+
+$(document).ready(function(){
+    $('.comment_submit').submit(function(e){
+        e.preventDefault();
+        $.post('submit_comment.php',{'comment':$('textarea').val()})
+            .done(function(data){
+                // console.log(data)
+                add_new_comment(data);
+            })
+    });
+});

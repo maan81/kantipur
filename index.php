@@ -74,10 +74,10 @@
         </div>
 
         <div id="comment_wrapper" class="col-lg-6">
-            <div class="comment_submit">
+            <form class="comment_submit" method="post">
                 <textarea class="col-lg-12" placeholder="Your Comments"></textarea>
                 <button class="btn btn-default btn-outline-primary float-right">Post</button>
-            </div>
+            </form>
             <div class="clearfix"></div>
             <div class="comment_existing">
             </div>
@@ -87,7 +87,7 @@
 </div>
 <!-- /container -->
 
-<script src="//code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+<script src="//code.jquery.com/jquery-3.2.1.min.js" ></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
