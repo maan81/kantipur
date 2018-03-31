@@ -181,7 +181,10 @@ $(document).ready(function(){
         e.preventDefault();
         $.post('comments.php',{'comment':$('textarea').val(),'video_id':cur_video_id})
             .done(function(data){
-                add_new_comment(data);
+                data = JSON.parse(data);
+                add_new_comment(data[0].comment);
+
+                $('textarea').val('');
             })
     });
 

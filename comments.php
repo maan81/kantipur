@@ -11,6 +11,8 @@ function insert($con,$video_id){
             '("'.$_POST['comment'].'","'.$video_id.'")';
     mysqli_query($con,$sql);
     close_con($con);
+
+    return json_encode([['video_id'=>$video_id,'comment'=>$_POST['comment']]]);
 }
 
 function get_all($con,$video_id){
@@ -48,7 +50,8 @@ function close_con($con){
 $con = init_con($db_server,$db_username,$db_password,$db_database);
 
 if($_POST){
-    insert($con,$_POST['video_id']);
+    $comments = insert($con,$_POST['video_id']);
+    print_r($comments);
 }
 
 elseif($_GET){
